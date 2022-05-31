@@ -1,0 +1,41 @@
+[
+    {
+        "name" : "covid-19",
+        "synonyms" : ["covid", "corona", "coronovirus", "the rona"],
+        "General information" : {
+            "definition" : "",
+            "Symptoms" : "",
+            "Long-term effect" : "",
+            "link" : ""
+        },
+        "Prevention" : "" , 
+        "Treatment" : ""
+    }, 
+    
+    {
+        "name" : "hiv",
+        "synonyms" : [""],
+        "General information" : {
+            "definition" : "",
+            "Symptoms" : "",
+            "Long-term effect" : "",
+            "link" : ""
+        },
+        "Prevention" : "" , 
+        "Treatment" : ""
+    },
+    
+    {
+        "name" : "covid-19",
+        "synonyms" : ["covid", "corona", "coronovirus", "the rona"],
+        "General information" : {
+            "definition" : "",
+            "Symptoms" : "",
+            "Long-term effect" : "",
+            "link" : ""
+        },
+        "Prevention" : "" , 
+        "Treatment" : ""
+    }
+]
+
