@@ -80,6 +80,6 @@ def analyse(sentence) :
             email = input().split("@")[0]
             print("Alright, thank you for connecting with me "+ email + ". Have a good day!")
 
-analyse("info")
+analyse("covid-19")
             
     
