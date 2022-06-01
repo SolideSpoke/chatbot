@@ -1,24 +1,14 @@
 [
     {
         "name" : "covid-19",
-        "synonyms" : ["covid", "corona", "coronovirus", "the rona","covid-19],
+        "synonyms" : ["covid", "corona", "coronovirus", "the rona","covid-19"],
         "General information" : {
             "definition" : "COVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.",
-            "Symptoms" : "The most common symptoms of COVID-19 are: \n 
-- Fever \n 
-- Dry cough \n 
-- Fatigue \n",
+            "Symptoms" : "The most common symptoms of COVID-19 are: \n - Fever \n - Dry cough \n - Fatigue \n",
             "Long-term effect" : "Some people who have had COVID-19, whether they have needed hospitalization or not, continue to experience symptoms, including fatigue, respiratory and neurological symptoms.",
             "link" : "More details can be found at CDC and WHO."
         },
-        "Prevention" : "To prevent the spread of COVID-19: \n
-- Maintain a safe distance from others (at least 1 metre), even if they don’t appear to be sick. \n
-- Wear a mask in public, especially indoors or when physical distancing is not possible. \n
-- Choose open, well-ventilated spaces over closed ones. Open a window if indoors. \n
-- Clean your hands often. Use soap and water, or an alcohol-based hand rub. \n
-- Get vaccinated when it’s your turn. Follow local guidance about vaccination. \n
-- Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze. 
-Stay home if you feel unwell. \n" , 
+        "Prevention" : "To prevent the spread of COVID-19: \n - Maintain a safe distance from others (at least 1 metre), even if they don’t appear to be sick. \n - Wear a mask in public, especially indoors or when physical distancing is not possible. \n - Choose open, well-ventilated spaces over closed ones. Open a window if indoors. \n - Clean your hands often. Use soap and water, or an alcohol-based hand rub. \n - Get vaccinated when it’s your turn. Follow local guidance about vaccination. \n - Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze. Stay home if you feel unwell. \n" , 
         "Treatment" : "Optimal supportive care includes oxygen for severely ill patients and those who are at risk for severe disease and more advanced respiratory support such as ventilation for patients who are critically ill."
     }, 
     
@@ -27,24 +17,12 @@ Stay home if you feel unwell. \n" ,
         "synonyms" : ["aids" , "hiv" , "human immunodeficiency viruses"],
         "General information" : {
             "definition" : "HIV (human immunodeficiency virus) is a virus that attacks the body’s immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome).",
-            "Symptoms" : "Possible signs and symptoms of HIV include:
-- Fever. \n
-- Headache. \n
-- Muscle aches and joint pain. \n
-- Rash. \n
-- Sore throat and painful mouth sores. \n
-- Swollen lymph glands, mainly on the neck. \n
-- Diarrhea. \n
-- Weight loss. \n",
-            "Long-term effect" : "
-HIV is associated with a variety of long-term consequences, including metabolic and cardiovascular complications, cancer, frailty, and bone demineralization. An awareness of the potential for these complications and knowledge of prevention and treatment strategies is critical in the management of HIV disease.",
+            "Symptoms" : "Possible signs and symptoms of HIV include: \n - Fever. \n - Headache. \n - Muscle aches and joint pain. \n - Rash. \n - Sore throat and painful mouth sores. \n - Swollen lymph glands, mainly on the neck. \n - Diarrhea. \n - Weight loss. \n",
+            "Long-term effect" : "HIV is associated with a variety of long-term consequences, including metabolic and cardiovascular complications, cancer, frailty, and bone demineralization. An awareness of the potential for these complications and knowledge of prevention and treatment strategies is critical in the management of HIV disease.",
             "link" : "More details can be found at CDC and WHO."
         },
         "Prevention" : "You can use strategies such as abstinence (not having sex), never sharing needles, and using condoms the right way every time you have sex. You may also be able to take advantage of HIV prevention medicines such as pre-exposure prophylaxis (PrEP) and post-exposure prophylaxis (PEP)." , 
-        "Treatment" : "HIV treatment (antiretroviral therapy or ART) involves taking medicine as prescribed by a health care provider. HIV treatment reduces the amount of HIV in your body and helps you stay healthy. \n
-- There is no cure for HIV, but you can control it with HIV treatment. \n
-- Most people can get the virus under control within six months. \n
-- HIV treatment does not prevent transmission of other sexually transmitted diseases. \n"
+        "Treatment" : "HIV treatment (antiretroviral therapy or ART) involves taking medicine as prescribed by a health care provider. HIV treatment reduces the amount of HIV in your body and helps you stay healthy. \n - There is no cure for HIV, but you can control it with HIV treatment. \n - Most people can get the virus under control within six months. \n - HIV treatment does not prevent transmission of other sexually transmitted diseases. \n"
     },
     
     {
@@ -52,26 +30,12 @@ HIV is associated with a variety of long-term consequences, including metabolic 
         "synonyms" : ["tumor"],
         "General information" : {
             "definition" : "Cancer is a disease in which some of the body's cells grow uncontrollably and spread to other parts of the body. Cancer can start almost anywhere in the human body, which is made up of trillions of cells.",
-            "Symptoms" : "Symptoms of cancer can include the following: \n
-- A thickening or lump in any part of the body. \n
-- Weight loss or gain with no known reason. \n
-- A sore that does not heal. \n
-- Hoarseness or a cough that does not go away. \n
-- A hard time swallowing.\n
-- Discomfort after eating. \n
-- Changes in bowel or bladder habits. \n
-- Unusual bleeding or discharge. \n",
+            "Symptoms" : "Symptoms of cancer can include the following: \n - A thickening or lump in any part of the body. \n - Weight loss or gain with no known reason. \n - A sore that does not heal. \n - Hoarseness or a cough that does not go away. \n - A hard time swallowing.\n - Discomfort after eating. \n - Changes in bowel or bladder habits. \n - Unusual bleeding or discharge. \n",
             "Long-term effect" : "The long-term consequences of cancer and its treatment include both physical and mental effects, such as chronic fatigue, sexual difficulties, mental health problems, pain, urinary and gastrointestinal problems, and lymphoedema (persistent tissue swelling caused by fluid retention).",
             "link" : "More details can be found at CDC and WHO."
         },
         "Prevention" : "You can lower your risk of getting many common kinds of cancer by making healthy choices. Screening tests can find some cancers early, when treatment works best. Vaccines (shots) can help prevent several kinds of cancer." , 
-        "Treatment" : "Cancer treatment is based on the stage of the cancer. Sometimes, treatment is meant to cure the cancer. Other times, the goal is to stop the cancer from spreading further. Some treatments may be given to reduce side effects of other treatments and make you more comfortable. \n
-- Surgery: An operation where doctors cut out tissue with cancer cells. \n
-- Chemotherapy: Special medicines that shrink or kill cancer cells. \n
-- Radiation therapy: Using high-energy rays (similar to X-rays) to kill cancer cells. \n
-- Hormone therapy: Blocks cancer cells from getting the hormones they need to grow. \n
-- Immunotherapy: A treatment that works with your body’s immune system to help it fight cancer cells or to control side effects from other cancer treatments. \n
-- Stem cell transplant (bone marrow transplant): Replace bone marrow cells lost due to very high doses of chemotherapy or radiation therapy. Most commonly used to treat blood cancers and cancers in lymph nodes. \n" 
+        "Treatment" : "Cancer treatment is based on the stage of the cancer. Sometimes, treatment is meant to cure the cancer. Other times, the goal is to stop the cancer from spreading further. Some treatments may be given to reduce side effects of other treatments and make you more comfortable. \n - Surgery: An operation where doctors cut out tissue with cancer cells. \n - Chemotherapy: Special medicines that shrink or kill cancer cells. \n - Radiation therapy: Using high-energy rays (similar to X-rays) to kill cancer cells. \n - Hormone therapy: Blocks cancer cells from getting the hormones they need to grow. \n - Immunotherapy: A treatment that works with your body’s immune system to help it fight cancer cells or to control side effects from other cancer treatments. \n - Stem cell transplant (bone marrow transplant): Replace bone marrow cells lost due to very high doses of chemotherapy or radiation therapy. Most commonly used to treat blood cancers and cancers in lymph nodes. \n" 
     }
 ]
 
