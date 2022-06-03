@@ -4,12 +4,13 @@ import socket
 HOST = "localhost"
 PORT = 65432
 
+username = ""
 def start() :
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s :
         s.bind((HOST, PORT))
         s.listen()
         while True :
-            print("Server waiting for the client")
+            #print("What's your name ?")
             
             conn, addr = s.accept()
             with conn : 
@@ -20,7 +21,11 @@ def start() :
                         break
                     if data == b"close" : 
                         return None
-                    print(data)
+                    
+                    #username = data
+                    d = data.decode()
+                    print(d)
+
                     conn.sendall(data)
 
 start()

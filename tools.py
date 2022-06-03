@@ -1,4 +1,5 @@
 import json 
+
 def info(d) :
     f = open("data.json")
     data = json.load(f)
@@ -49,7 +50,36 @@ def locate(d):
 
     f.close()
     return False, None
+
+def ask(question) :
+    print(question)
+    f = open("data.json")
+    data = json.load(f)
+    for disease in data :
+        print("- " + disease["name"])
+    f.close()
+    x = input()
+    return x
+
+def other() :
+    print("I am not intelligent enough to answer your question. our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:")
+    email = input().split("@")[0]
+    print("Alright, thank you for connecting with me "+ email + ". Have a good day!")
+
+def is_disease(answer) :
+    categorie = ""
+    for word in answer.split() :
+        if word == "symptoms" or word == "definition" or word == "term" or word == "prevention" or word == "treament" :
+            categorie = word
+        
+        is_in_data , name = locate(word)
+        if(is_in_data) : 
+            return True, name, categorie
     
+    return False, None, None
+
+
+
 def analyse(sentence) : 
     words = sentence.split()
     for word in words :
@@ -74,13 +104,15 @@ def analyse(sentence) :
                     print(term(w))
                 elif l == "treatment" :
                     print(symptoms(name))
+                elif l == "other" :
+                    print(other())
+                    
 
         #
         else : 
-            print("I am not intelligent enough to answer your question. our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:")
-            email = input().split("@")[0]
-            print("Alright, thank you for connecting with me "+ email + ". Have a good day!")
+            other()
 
-analyse("covid")
+
+
             
     

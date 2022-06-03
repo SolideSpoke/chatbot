@@ -15,7 +15,7 @@
         "name" : "hiv", 
         "synonyms" : ["aids" , "hiv" , "human immunodeficiency viruses"],
         "General information" : {
-            "definition" : "HIV (human immunodeficiency virus) is a virus that attacks the body’s immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome).",
+            "definition" : "HIV (human immunodeficiency virus) is a virus that attacks the body's immune system. If HIV is not treated, it can lead to AIDS (acquired immunodeficiency syndrome).",
             "Symptoms" : "Possible signs and symptoms of HIV include: \n - Fever. \n - Headache. \n - Muscle aches and joint pain. \n - Rash. \n - Sore throat and painful mouth sores. \n - Swollen lymph glands, mainly on the neck. \n - Diarrhea. \n - Weight loss. \n",
             "Long-term effect" : "HIV is associated with a variety of long-term consequences, including metabolic and cardiovascular complications, cancer, frailty, and bone demineralization. An awareness of the potential for these complications and knowledge of prevention and treatment strategies is critical in the management of HIV disease. \nMore details can be found at CDC and WHO."
         },
