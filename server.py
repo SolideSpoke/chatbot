@@ -1,5 +1,5 @@
 import socket
-
+import tools
 
 HOST = "localhost"
 PORT = 65432
@@ -24,8 +24,20 @@ def start() :
                     
                     #username = data
                     d = data.decode()
-                    print(d)
 
-                    conn.sendall(data)
+                    disease, name, category = tools.is_disease(d)
+                    question = ""
+                    if disease : 
+                        if category == "symptoms" :
+                            question = tools.symptoms(name)
+                        elif category == "term" : 
+                            question = tools.term(word)
+                        elif category == "treatment" : 
+                            question = tools.treatment(word)
+                        else:
+                            question = "What do you want to know about " + name
+                    callback = str.encode(question)
+                    print(callback)
+                    conn.sendall(callback)
 
 start()

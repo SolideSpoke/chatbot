@@ -67,14 +67,14 @@ def other() :
     print("Alright, thank you for connecting with me "+ email + ". Have a good day!")
 
 def is_disease(answer) :
-    categorie = ""
+    category = ""
     for word in answer.split() :
         if word == "symptoms" or word == "definition" or word == "term" or word == "prevention" or word == "treament" :
-            categorie = word
+            category = word
         
         is_in_data , name = locate(word)
         if(is_in_data) : 
-            return True, name, categorie
+            return True, name, category
     
     return False, None, None
 

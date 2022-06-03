@@ -15,9 +15,11 @@ def send(msg) :
 #print(f"Received {data!r}")
 
 def s() : 
-    a = tools.ask("What do you want to know one of this following diseses ? ")
-    callback = send(a)
-    print("from server : "+ callback)
+    question = "What do you want to know one of this following diseases ?"
+    while question != "" : 
+        a = tools.ask(question)
+        callback = send(a)
+        question = str.encode(callback)
 
 def username():
     name = input("What's your name")
