@@ -42,20 +42,21 @@ def locate(d):
     data = json.load(f)
     for disease in data :
         if(disease["name"] == d) :
-            return True
+            return True, disease["name"]
         for s in disease["synonyms"] :
             if d == s : 
-                return True
+                return True , disease["name"]
 
     f.close()
-    return False
+    return False, None
     
 def analyse(sentence) : 
     words = sentence.split()
     for word in words :
         w = word.lower() 
         #if disease
-        if(locate(w)):
+        is_in_data, name = locate(w)
+        if(is_in_data):
             print(info(w))
             print()
             print("What do you want to know about " + w + ". Choose one of the follow options")
@@ -68,11 +69,11 @@ def analyse(sentence) :
             for a in answer.split() : 
                 l = a.lower()
                 if l == "symptoms" :
-                    print(symptoms(w))
+                    print(symptoms(name))
                 elif l == "term" or l == "effect" :
                     print(term(w))
                 elif l == "treatment" :
-                    print(symptoms(w))
+                    print(symptoms(name))
 
         #
         else : 
@@ -80,6 +81,6 @@ def analyse(sentence) :
             email = input().split("@")[0]
             print("Alright, thank you for connecting with me "+ email + ". Have a good day!")
 
-analyse("covid-19")
+analyse("covid")
             
     
