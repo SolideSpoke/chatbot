@@ -31,9 +31,9 @@ def start() :
                         if category == "symptoms" :
                             question = tools.symptoms(name)
                         elif category == "term" : 
-                            question = tools.term(word)
+                            question = tools.term(name)
                         elif category == "treatment" : 
-                            question = tools.treatment(word)
+                            question = tools.treatment(name)
                         else:
                             question = "What do you want to know about " + name
                     callback = str.encode(question)

@@ -68,15 +68,18 @@ def other() :
 
 def is_disease(answer) :
     category = ""
+    b = False
+    n = ""
     for word in answer.split() :
         if word == "symptoms" or word == "definition" or word == "term" or word == "prevention" or word == "treament" :
             category = word
         
         is_in_data , name = locate(word)
         if(is_in_data) : 
-            return True, name, category
+            b = True
+            n = name
     
-    return False, None, None
+    return b, n, category
 
 
 
