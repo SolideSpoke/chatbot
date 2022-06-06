@@ -1,5 +1,10 @@
 import json 
 
+def names():
+    f = open("data.json")
+    data = json.load(f)
+    for disease in data : 
+        print(disease["name"])
 def info(d) :
     f = open("data.json")
     data = json.load(f)
@@ -53,11 +58,6 @@ def locate(d):
 
 def ask(question) :
     print(question)
-    f = open("data.json")
-    data = json.load(f)
-    for disease in data :
-        print("- " + disease["name"])
-    f.close()
     x = input()
     return x
 

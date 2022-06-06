@@ -5,6 +5,7 @@ HOST = "localhost"
 PORT = 65432
 
 username = ""
+mind = ""
 def start() :
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s :
         s.bind((HOST, PORT))
@@ -27,7 +28,11 @@ def start() :
 
                     disease, name, category = tools.is_disease(d)
                     question = ""
-                    if disease : 
+                    if name != "" : 
+                        mind = name
+                    elif name == "" and category != "" and mind != "":
+                        name = mind
+                    if name != "" : 
                         if category == "symptoms" :
                             question = tools.symptoms(name)
                         elif category == "term" : 
@@ -36,6 +41,10 @@ def start() :
                             question = tools.treatment(name)
                         else:
                             question = "What do you want to know about " + name
+                            mind = name
+                    else : 
+                        mind = ""
+                        question = "Can you repeat ?"
                     callback = str.encode(question)
                     print(callback)
                     conn.sendall(callback)

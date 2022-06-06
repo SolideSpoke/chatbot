@@ -13,9 +13,15 @@ def send(msg) :
     
 #send(name)
 #print(f"Received {data!r}")
+#understand want the server expect
+def question(callback) : 
+    b, n, cat = tools.is_disease()
+    #talking about a specific diseases
+    if b : 
+        if cat == "" : 
+            print("What do you want to know about" + name)
 
-def s() : 
-    question = "What do you want to know one of this following diseases ?"
+def s(question) : 
     while question != "" : 
         a = tools.ask(question)
         callback = send(a)
@@ -24,5 +30,5 @@ def s() :
 def username():
     name = input("What's your name")
 
-s()
+s("What do you want to know about the folowing disases ?")
     
