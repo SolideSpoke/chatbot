@@ -42,6 +42,12 @@ def start() :
                         else:
                             question = "What do you want to know about " + name
                             mind = name
+                    elif category == "info" or category == "other":
+                        mind = "info"
+                        question = "Our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:"
+                    elif mind == "info" :
+                        username = d.split("@")[0]
+                        question = "Alright, thank you for connecting with me "+ username + ". Have a good day!"
                     else : 
                         mind = ""
                         question = "Can you repeat ?"

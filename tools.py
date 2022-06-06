@@ -78,6 +78,9 @@ def is_disease(answer) :
         if(is_in_data) : 
             b = True
             n = name
+        
+        if word == "info" :
+            category = "info"
     
     return b, n, category
 
