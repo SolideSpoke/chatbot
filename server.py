@@ -5,9 +5,11 @@ HOST = "localhost"
 PORT = 65432
 
 username = ""
-mind = ""
+introduction = "What do you want to know about "
 def start() :
+    mind = ""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s :
+        global introduction
         s.bind((HOST, PORT))
         s.listen()
         while True :
@@ -28,7 +30,9 @@ def start() :
 
                     disease, name, category = tools.is_disease(d)
                     question = ""
-                    if name != "" : 
+                    if category == "info" : 
+                        mind = ""
+                    if name != "": 
                         mind = name
                     elif name == "" and category != "" and mind != "":
                         name = mind
@@ -40,19 +44,20 @@ def start() :
                         elif category == "treatment" : 
                             question = tools.treatment(name)
                         else:
-                            question = "What do you want to know about " + name
+                            question = "What do you want to know about " + name + "\n - Symptoms \n - Long-term effect \n - Treatment "
                             mind = name
                     elif category == "info" or category == "other":
                         mind = "info"
                         question = "Our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:"
                     elif mind == "info" :
                         username = d.split("@")[0]
-                        question = "Alright, thank you for connecting with me "+ username + ". Have a good day!"
+                        question = "Alright, thank you for connecting with me "+ username + ". Have a good day! \n" + introduction
+                        mind = ""
                     else : 
                         mind = ""
                         question = "Can you repeat ?"
                     callback = str.encode(question)
-                    print(callback)
+                    print(mind)
                     conn.sendall(callback)
 
 start()

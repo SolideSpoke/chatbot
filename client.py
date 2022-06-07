@@ -19,13 +19,16 @@ def question(callback) :
     #talking about a specific diseases
     if b : 
         if cat == "" : 
-            print("What do you want to know about" + name)
+            println("What do you want to know about" + name)
 
 def s(question) : 
     while question != "" : 
-        a = tools.ask(question)
-        callback = send(a)
-        question = str.encode(callback)
+        try :
+            a = tools.ask(question)
+            callback = send(a)
+            question = str.encode(callback)
+        except ConnectionRefusedError :
+            question = "Server unreachable, check your connexion"
 
 def username():
     name = input("What's your name")
