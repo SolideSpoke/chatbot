@@ -69,7 +69,7 @@ def start() :
                                 mind_c = ""
                             else:
                                 question = tools.definition(name)
-                                question += "\n What do you want to know about " + name + "\n - Symptoms \n - Long-term effect \n - Treatment "
+                                question += "\n Please choose one of the following diseases " + name + "\n - Symptoms \n - Long-term effect \n - Treatment "
                                 mind = name
                         elif name == "" and mind_c != "info" and mind != "": 
                             question = "Which diseases you want info about ?"
