@@ -3,8 +3,10 @@ import json
 def names():
     f = open("data.json")
     data = json.load(f)
+    names = []
     for disease in data : 
-        print(disease["name"])
+        names.append(disease["name"])
+    return names
 def info(d) :
     f = open("data.json")
     data = json.load(f)
@@ -71,7 +73,7 @@ def is_disease(answer) :
     b = False
     n = ""
     for word in answer.split() :
-        if word == "symptoms" or word == "definition" or word == "term" or word == "prevention" or word == "treament" :
+        if word == "symptoms" or word == "definition" or word == "term" or word == "prevention" or word == "treatment" :
             category = word
         
         is_in_data , name = locate(word)

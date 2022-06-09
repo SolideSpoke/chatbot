@@ -8,6 +8,7 @@ username = ""
 introduction = "What do you want to know about "
 def start() :
     mind = ""
+    mind_c = ""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s :
         global introduction
         s.bind((HOST, PORT))
@@ -27,35 +28,51 @@ def start() :
                     
                     #username = data
                     d = data.decode()
-
-                    disease, name, category = tools.is_disease(d)
-                    question = ""
-                    if category == "info" : 
-                        mind = ""
-                    if name != "": 
-                        mind = name
-                    elif name == "" and category != "" and mind != "":
-                        name = mind
-                    if name != "" : 
-                        if category == "symptoms" :
-                            question = tools.symptoms(name)
-                        elif category == "term" : 
-                            question = tools.term(name)
-                        elif category == "treatment" : 
-                            question = tools.treatment(name)
-                        else:
-                            question = "What do you want to know about " + name + "\n - Symptoms \n - Long-term effect \n - Treatment "
+                    
+                    #is start 
+                    if(d == "diseases list") :
+                        question = "What do you want to know about the folowing disases ?" 
+                        for name in tools.names() : 
+                            question += "\n-" + name
+                    else :
+                        disease, name, category = tools.is_disease(d)
+                        question = ""
+                        if category == "info" : 
+                            mind = ""
+                            mind_c = "info"
+                        elif category != "" :
+                            mind_c = category
+                        if name != "": 
                             mind = name
-                    elif category == "info" or category == "other":
-                        mind = "info"
-                        question = "Our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:"
-                    elif mind == "info" :
-                        username = d.split("@")[0]
-                        question = "Alright, thank you for connecting with me "+ username + ". Have a good day! \n" + introduction
-                        mind = ""
-                    else : 
-                        mind = ""
-                        question = "Can you repeat ?"
+                        elif name == "" and category != "" and mind != "":
+                            name = mind
+                        if name != "" : 
+                            if category == "" and mind_c != "" :
+                                category = mind_c
+                            if category == "symptoms" :
+                                question = tools.symptoms(name)
+                                mind_c = ""
+                            elif category == "term" : 
+                                question = tools.term(name)
+                                mind_c = ""
+                            elif category == "treatment" : 
+                                question = tools.treatment(name)
+                                mind_c = ""
+                            else:
+                                question = "What do you want to know about " + name + "\n - Symptoms \n - Long-term effect \n - Treatment "
+                                mind = name
+                        elif name == "" and mind_c != "info" : 
+                            question = "Which diseases you want info about ?"
+                        elif category == "info" or category == "other":
+                            mind = "info"
+                            question = "Our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:"
+                        elif mind == "info" :
+                            username = d.split("@")[0]
+                            question = "Alright, thank you for connecting with me "+ username + ". Have a good day! \n" + introduction
+                            mind = ""
+                        else : 
+                            mind = ""
+                            question = "Can you repeat ?"
                     callback = str.encode(question)
                     print(mind)
                     conn.sendall(callback)
