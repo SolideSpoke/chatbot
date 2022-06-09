@@ -6,7 +6,18 @@ def names():
     names = []
     for disease in data : 
         names.append(disease["name"])
+    f.close()
     return names
+
+def definition(disease):
+    f = open("data.json")
+    data = json.load(f)
+    for d in data : 
+        if(d["name"] == disease) :
+            return d["General information"]["definition"]
+    f.close()
+    return ""
+
 def info(d) :
     f = open("data.json")
     data = json.load(f)
