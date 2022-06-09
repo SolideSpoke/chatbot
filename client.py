@@ -24,10 +24,11 @@ def question(callback) :
 def run(question) : 
     while question != "" : 
         try :
-            a = tools.ask(question)
-            callback = send(a)
+            callback = send(question)
             question = str.encode(callback)
-            if(a == "close") : 
+            question = tools.ask(question)
+            if(question == "close") : 
+                send("close") #close the server
                 return None
         except ConnectionRefusedError :
             question = "Server unreachable, check your connexion"
@@ -35,5 +36,5 @@ def run(question) :
 def username():
     name = input("What's your name")
 
-run("diseases list")
+run("init")
     

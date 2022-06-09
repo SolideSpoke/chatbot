@@ -30,7 +30,16 @@ def start() :
                     d = data.decode()
                     
                     #is start 
-                    if(d == "diseases list") :
+                    if(d == "init") :
+                        question = "Welcome message. What's your name"
+                        mind_c = "username"
+                    elif mind_c == "username" : 
+                        username = d
+                        mind_c = ""
+                        question = "Nice to meet you aniss " + username + "\n What do you want to know about the following diseases ?"
+                        for name in tools.names():
+                            question += "\n-"+name                    
+                    elif(d == "diseases list") :
                         question = "What do you want to know about the folowing disases ?" 
                         for name in tools.names() : 
                             question += "\n-" + name
