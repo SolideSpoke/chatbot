@@ -72,10 +72,10 @@ def start() :
                                 mind_c = ""
                             else:
                                 question = tools.definition(name)
-                                question += "\n Please choose one of the following diseases " + name + "\n - Symptoms \n - Long-term effect \n - Treatment "
+                                question += "\n Please choose one of the following diseases " + name + "\n - Symptoms \n - Long-term effect \n - Treatment \n Prevention"
                                 mind = name
                         elif name == "" and mind_c != "info" and mind != "": 
-                            question = "Which diseases you want info about ?"
+                            question = "Sorry can you repeat what you just said ?"
                         elif category == "info" or category == "other":
                             mind = "info"
                             question = "Our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:"
@@ -85,7 +85,7 @@ def start() :
                             mind = ""
                         else : 
                             mind = ""
-                            question = "Can you repeat ?"
+                            question = "Sorry can you repeat what you just said ?"
                     callback = str.encode(question)
                     print(mind)
                     conn.sendall(callback)
