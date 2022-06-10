@@ -44,7 +44,7 @@ def start() :
                         for name in tools.names() : 
                             question += "\n-" + name
                     else :
-                        disease, name, category = tools.is_disease(d)
+                        disease, name, category = tools.is_disease(d.lower())
                         question = ""
                         if category == "info" : 
                             mind = ""
@@ -66,6 +66,9 @@ def start() :
                                 mind_c = ""
                             elif category == "treatment" : 
                                 question = tools.treatment(name)
+                                mind_c = ""
+                            elif category == "prevention" :
+                                question = tools.prevention(name)
                                 mind_c = ""
                             else:
                                 question = tools.definition(name)

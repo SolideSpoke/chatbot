@@ -1,3 +1,5 @@
 import tools
 
-tools.names()
+a = b"hello"
+print(a)
+print(a.decode())

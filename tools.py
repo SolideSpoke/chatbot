@@ -55,6 +55,15 @@ def treatment(d) :
     
     f.close()
 
+def prevention(d):
+    f = open("data.json")
+    data = json.load(f)
+    for disease in data :
+        if(disease["name"] == d) :
+            return disease["Prevention"]
+    
+    f.close()
+
 def locate(d):
     f = open("data.json")
 
@@ -84,7 +93,7 @@ def is_disease(answer) :
     b = False
     n = ""
     for word in answer.split() :
-        if word == "symptoms" or word == "definition" or word == "term" or word == "prevention" or word == "treatment" :
+        if word == "symptoms" or word == "definition" or word == "term" or word == "prevention" or word == "treatment" or word == "prevention":
             category = word
         
         is_in_data , name = locate(word)
