@@ -36,7 +36,7 @@ def start() :
                     elif mind_c == "username" : 
                         username = d
                         mind_c = ""
-                        question = "Nice to meet you aniss " + username + "\n What do you want to know about the following diseases ?"
+                        question = "Nice to meet you " + username + "\n What do you want to know about the following diseases ?"
                         for name in tools.names():
                             question += "\n-"+name                    
                     elif(d == "diseases list") :
