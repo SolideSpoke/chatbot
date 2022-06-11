@@ -5,17 +5,18 @@ HOST = "localhost"
 PORT = 65432
 
 username = ""
-introduction = "What do you want to know about "
+
 def start() :
     mind = ""
     mind_c = ""
+
+    #initialization of the socket
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s :
         global introduction
         s.bind((HOST, PORT))
         s.listen()
+
         while True :
-            #print("What's your name ?")
-            
             conn, addr = s.accept()
             with conn : 
                 print(f"Connected by {addr}")
@@ -25,11 +26,9 @@ def start() :
                         break
                     if data == b"close" : 
                         return None
-                    
-                    #username = data
                     d = data.decode()
                     
-                    #is start 
+                    #initialization of the conversation  
                     if(d == "init") :
                         question = "Hello what's your name ?"
                         mind_c = "username"
@@ -39,18 +38,20 @@ def start() :
                         question = "Hi " + username + ", I'm Lina, and I'll hopefully be answering any medical questions that you have."
                         question += "Please ask me anything relating to medical diseases. My answers come from the World Health Organization and Center for Disease Control and Prevention: "
                         for name in tools.names():
-                            question += "\n-"+name                    
+                            question += "\n-"+name           
                     elif(d == "diseases list") :
                         question = "Please ask me anything relating to medical diseases. My answers come from the World Health Organization and Center for Disease Control and Prevention."
                         question += "\n What else would you like to know about the folowing diseases ?" 
                         for name in tools.names() : 
                             question += "\n-" + name
+
+                    #body of the conversation
                     else :
                         disease, name, category = tools.is_disease(d.lower())
                         question = ""
-                        if category == "info" : 
+                        if category == "information" : 
                             mind = ""
-                            mind_c = "info"
+                            mind_c = "information"
                         elif category != "" :
                             mind_c = category
                         if name != "": 
@@ -74,20 +75,22 @@ def start() :
                                 mind_c = ""
                             else:
                                 question = tools.definition(name)
-                                question += "\n Please choose one of the following diseases " + name + "\n - Symptoms \n - Long-term effect \n - Treatment \n - Prevention"
+                                question += "\n Please choose one of the following diseases: " + name + "\n - Symptoms \n - Long-term effect \n - Treatment \n - Prevention"
                                 mind = name
                         elif name == "" and mind_c != "info" and category != "": 
                             question = "Sorry, can you please tell me which disease are you talking about ?"
-                        elif category == "info" or category == "other":
-                            mind = "info"
+                        elif category == "information" or category == "other":
+                            mind = "information"
                             question = "Our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:"
-                        elif mind == "info" :
+                        elif mind == "information" :
                             username = d.split("@")[0]
                             question = "Alright, thank you for connecting with me "+ username + ". Have a good day! \n" + introduction
                             mind = ""
                         else : 
                             mind = ""
                             question = "Sorry can you repeat what you just said ?"
+
+                    #sending the answer to the client
                     callback = str.encode(question)
                     print(mind)
                     conn.sendall(callback)

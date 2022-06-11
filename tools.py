@@ -52,7 +52,6 @@ def treatment(d) :
     for disease in data :
         if(disease["name"] == d) :
             return disease["Treatment"]
-    
     f.close()
 
 def prevention(d):
@@ -61,7 +60,6 @@ def prevention(d):
     for disease in data :
         if(disease["name"] == d) :
             return disease["Prevention"]
-    
     f.close()
 
 def locate(d):
@@ -74,7 +72,6 @@ def locate(d):
         for s in disease["synonyms"] :
             if d == s : 
                 return True , disease["name"]
-
     f.close()
     return False, None
 
@@ -83,10 +80,6 @@ def ask(question) :
     x = input()
     return x
 
-def other() :
-    print("I am not intelligent enough to answer your question. our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:")
-    email = input().split("@")[0]
-    print("Alright, thank you for connecting with me "+ email + ". Have a good day!")
 
 def is_disease(answer) :
     category = ""
@@ -101,12 +94,10 @@ def is_disease(answer) :
             b = True
             n = name
         
-        if word == "info" :
-            category = "info"
+        if word == "information" :
+            category = "information"
     
     return b, n, category
-
-
 
 def analyse(sentence) : 
     words = sentence.split()
@@ -124,6 +115,7 @@ def analyse(sentence) :
             print("Other")
             print()
             answer = input()
+
             for a in answer.split() : 
                 l = a.lower()
                 if l == "symptoms" :
@@ -134,9 +126,6 @@ def analyse(sentence) :
                     print(symptoms(name))
                 elif l == "other" :
                     print(other())
-                    
-
-        #
         else : 
             other()
 
