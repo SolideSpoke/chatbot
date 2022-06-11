@@ -25,7 +25,7 @@ def run(question) :
     while question != "" : 
         try :
             callback = send(question)
-            question = str.encode(callback)
+            question = callback
             question = tools.ask(question)
             if(question == "close") : 
                 send("close") #close the server

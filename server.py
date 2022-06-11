@@ -31,16 +31,18 @@ def start() :
                     
                     #is start 
                     if(d == "init") :
-                        question = "Welcome message. What's your name"
+                        question = "Hello what's your name ?"
                         mind_c = "username"
                     elif mind_c == "username" : 
                         username = d
                         mind_c = ""
-                        question = "Nice to meet you " + username + "\n What do you want to know about the following diseases ?"
+                        question = "Hi " + username + ", I'm Lina, and I'll hopefully be answering any medical questions that you have."
+                        question += "Please ask me anything relating to medical diseases. My answers come from the World Health Organization and Center for Disease Control and Prevention: "
                         for name in tools.names():
                             question += "\n-"+name                    
                     elif(d == "diseases list") :
-                        question = "What do you want to know about the folowing disases ?" 
+                        question = "Please ask me anything relating to medical diseases. My answers come from the World Health Organization and Center for Disease Control and Prevention."
+                        question += "\n What else would you like to know about the folowing diseases ?" 
                         for name in tools.names() : 
                             question += "\n-" + name
                     else :
@@ -72,10 +74,10 @@ def start() :
                                 mind_c = ""
                             else:
                                 question = tools.definition(name)
-                                question += "\n Please choose one of the following diseases " + name + "\n - Symptoms \n - Long-term effect \n - Treatment \n Prevention"
+                                question += "\n Please choose one of the following diseases " + name + "\n - Symptoms \n - Long-term effect \n - Treatment \n - Prevention"
                                 mind = name
-                        elif name == "" and mind_c != "info" and mind != "": 
-                            question = "Sorry can you repeat what you just said ?"
+                        elif name == "" and mind_c != "info" and category != "": 
+                            question = "Sorry, can you please tell me which disease are you talking about ?"
                         elif category == "info" or category == "other":
                             mind = "info"
                             question = "Our 24/7 available customer server team will be happy to answer it if you wish to provide your email dow below:"
